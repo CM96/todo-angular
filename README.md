@@ -1,6 +1,6 @@
 # CmPortfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+Simple todo app built with Angular. This is a replacement to the todo app I built with Vanilla JS. This app will help getting started with custom github actions for angular apps.
 
 ## Development server
 
@@ -22,6 +22,6 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+MIT
