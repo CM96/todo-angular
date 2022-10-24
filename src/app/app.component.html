@@ -1,0 +1,31 @@
+<div class="container">
+  <mat-selection-list #selectedTodos>
+    <mat-list-option *ngFor="let todo of todos" [value]="todo.title" (click)="onSelectionChanged(todo.title)">
+      {{todo.title}}
+    </mat-list-option>
+  </mat-selection-list>
+  <div class="button-container" *ngIf="!showInput">
+    <button mat-raised-button color="warn" aria-label="Example icon button with a delete icon">
+      Delete
+      <mat-icon>delete</mat-icon>
+    </button>
+    <button (click)="showInputForm()" mat-raised-button color="primary"
+      aria-label="Example icon button with a delete icon">
+      Add
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+  <div class="form-container" *ngIf="showInput">
+    <mat-form-field class="example-form-field" appearance="fill">
+      <mat-label>Add todo</mat-label>
+      <input matInput type="text" [(ngModel)]="newTodo">
+      <button matSuffix mat-icon-button aria-label="Clear input field" (click)="clearInput()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" aria-label="Add todo" (click)="addTodo()">
+      Add
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

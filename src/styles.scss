@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.container {
+    padding: 20rem;
+    .mat-selection-list {
+        // border: 1px solid black;
+        padding: 2rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 8px rgb(216, 216, 216)
+    }
+    .button-container{
+        margin-top: 2rem;
+        button:nth-child(even){
+            margin-left: 2rem;
+        }
+    }
+    .form-container{
+        margin-top: 2rem;
+        button:nth-child(even){
+            margin-left: 2rem;
+        }
+    }
+}
