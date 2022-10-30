@@ -1,11 +1,11 @@
 <div class="container">
   <mat-selection-list #selectedTodos>
-    <mat-list-option *ngFor="let todo of todos" [value]="todo.title" (click)="onSelectionChanged(todo.title)">
+    <mat-list-option (selectedChange)="onSelectionChanged(todo.title)" *ngFor="let todo of todos" [value]="todo.title">
       {{todo.title}}
     </mat-list-option>
   </mat-selection-list>
   <div class="button-container" *ngIf="!showInput">
-    <button mat-raised-button color="warn" aria-label="Example icon button with a delete icon">
+    <button (click)="deleteTodo()" mat-raised-button color="warn" aria-label="Example icon button with a delete icon">
       Delete
       <mat-icon>delete</mat-icon>
     </button>
