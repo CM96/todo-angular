@@ -43,7 +43,6 @@ export class AppComponent {
   }
 
   showInputForm() {
-    console.log('here');
     this.showInput = true;
   }
 
@@ -51,7 +50,12 @@ export class AppComponent {
     this.newTodo = '';
   }
 
-  onSelectionChanged(valueSelected: any) {
+  onSelectionChanged(valueSelected: string) {
+    console.log('valueSelected', valueSelected);
     this.selectedTodos.push(valueSelected);
+  }
+
+  deleteTodo() {
+    this.todos = this.todos.filter(todo => !this.selectedTodos.includes(todo.title))
   }
 }
