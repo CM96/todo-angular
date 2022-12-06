@@ -1,4 +1,4 @@
-name: Node Simple CI
+name: Branches Cleanup
 
 on:
   push:
@@ -14,5 +14,5 @@ jobs:
       - name: Set up github
         uses: actions/checkout@v3
       - name: get merge branches
-        run: git branch --merged
+        run: git branch --merged | echo
         # | grep -E -v "(^\*|main|develop)"
