@@ -13,11 +13,4 @@ jobs:
     steps:
       - name: Set up github
         uses: actions/checkout@v3
-      - name: Set up Node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - name: Install Dependencies
-        run: npm ci
-      - name: Test
-        run: npm run test_ci
+      - name: get
