@@ -9,7 +9,7 @@ on:
 
 jobs:
   CI:
-    runs-on: linux
+    runs-on: windows-latest
     strategy:
       matrix:
         node-version: [14.x, 16.x]
