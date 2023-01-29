@@ -37,7 +37,7 @@ export class AppComponent {
       this.clearInput();
     }
     else {
-      alert(`${this.newTodo} already exists`);
+      alert(`${this.newTodo} already exists. Please enter a new task.s`);
     }
 
   }
