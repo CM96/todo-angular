@@ -1,18 +1,16 @@
 name: Branches Cleanup
 
 on:
-  push:
-    branches: ["main"]
   pull_request:
-    branches: ["main", "develop"]
-  workflow_dispatch:
+    types:
+      - closed
 
 jobs:
-  build:
+  Cleanup:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
     steps:
-      - name: Set up github
+      - name: Checkout repo code
         uses: actions/checkout@v3
-      - name: get merge branches
-        run: git branch --merged | echo
-        # | grep -E -v "(^\*|main|develop)"
+      - name: get merged branches and delete them
+        run: git branch --merged | egrep -v "(^\*main|develop)" | xargs git branch -d

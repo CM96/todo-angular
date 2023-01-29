@@ -23,14 +23,13 @@ export class AppComponent {
       },
       {
         title: 'Lobi',
-        author: 'Leo'
+        author: "Leo"
       },
     ]
   }
 
   addTodo() {
     const isExistingTodo = this.todos.some(todo => todo.title === this.newTodo);
-    console.log('isExistingTodo', isExistingTodo)
     if (!isExistingTodo) {
       this.todos.push({ title: this.newTodo, author: 'Leo' });
       this.showInput = false;
@@ -39,7 +38,6 @@ export class AppComponent {
     else {
       alert(`${this.newTodo} already exists`);
     }
-
   }
 
   showInputForm() {
