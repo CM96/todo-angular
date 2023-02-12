@@ -15,4 +15,7 @@ jobs:
       - name: Checkout repo code
         uses: actions/checkout@v3
       - name: get merged branches and delete them
-        run: git branch --merged | egrep -v "(^main|develop)" | xargs git branch -d
+        run: |
+          set -ex
+          git fecth origin --prune
+          git branch --merged origin/main | grep -v "\*\main|develop" | xargs git branch -d
