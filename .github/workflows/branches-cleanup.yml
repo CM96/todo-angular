@@ -18,4 +18,4 @@ jobs:
         run: |
           set -ex
           git fetch origin --prune
-          git branch --merged origin/main | grep -v "\*\|main|develop" | xargs git branch -d
+          git branch --merged origin/main | grep -v "\*\|main|develop" | xargs -n 1 git branch -d
