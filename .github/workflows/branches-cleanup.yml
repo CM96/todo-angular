@@ -17,5 +17,5 @@ jobs:
       - name: get merged branches and delete them
         run: |
           set -ex
-          git fecth origin --prune
+          git fetch origin --prune
           git branch --merged origin/main | grep -v "\*\main|develop" | xargs git branch -d
