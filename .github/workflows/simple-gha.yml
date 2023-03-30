@@ -9,7 +9,10 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    env:
+      CI: gha
+    runs-on: [self-hosted, linux]
+    # runs-on: ubuntu-latest
     steps:
       - name: Set up github
         uses: actions/checkout@v3
