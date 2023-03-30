@@ -1,4 +1,4 @@
-name: Todo CI
+name: Node Simple CI
 
 on:
   push:
@@ -8,19 +8,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  CI:
+  build:
+    env:
+      CI: gha
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [14.x, 16.x]
-
     steps:
       - name: Set up github
         uses: actions/checkout@v3
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: ${{matrix.node-version}}
+          node-version: 16
       - name: Install Dependencies
         run: npm ci
       - name: Test
