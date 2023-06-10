@@ -2,20 +2,20 @@ name: Branches Cleanup
 
 on:
   pull_request:
-    types:
-      - closed
+    # types:
+    #   - closed
     branches:
       - "main"
 
 jobs:
   Cleanup:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
     steps:
       - name: Checkout repo code
         uses: actions/checkout@v3
       - name: get merged branches and delete them
         run: |
-          set -ex
-          git fetch origin --prune
-          git branch --merged origin/main | grep -v "\*\|main|develop" | xargs -n 1 git branch -d
+          git branch --merged main > merged_branches.txt
+      - name: get list
+        run: |
+          merged_branches.txt | grep -v "main|develop" | xargs echo
