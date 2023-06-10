@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v3
       - name: get merged branches and delete them
         run: |
-          git branch --merged main > merged_branches.txt
+          git branch --merged origin/main > merged_branches.txt
       - name: get list
         run: |
           merged_branches.txt | grep -v "main|develop" | xargs echo
