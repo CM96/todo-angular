@@ -1,11 +1,12 @@
 name: Branches Cleanup
 
 on:
-  pull_request:
-    types:
-      - closed
-    branches:
-      - "main"
+  push:
+  # pull_request:
+  #   types:
+  #     - opened
+  #   branches:
+  #     - "main"
   workflow_dispatch:
 
 jobs:
