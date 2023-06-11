@@ -21,4 +21,4 @@ jobs:
           git branch --merged origin/main > merged_branches.txt
       - name: get list
         run: |
-          merged_branches.txt | grep -v "main|develop" | xargs echo
+         cat merged_branches.txt | grep -v "main|develop" | xargs echo
