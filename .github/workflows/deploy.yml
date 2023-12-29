@@ -29,6 +29,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 18
+      - name: install dependencies
+        run: npm ci
       - name: build artifacts
         run: npm run build:ci
 
